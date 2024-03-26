@@ -24,4 +24,4 @@ Para adicionar um nome ao banco de dados, envie uma requisição POST para /add 
 
 # Imagem docker ub
 
-https://hub.docker.com/repository/docker/diasdedev/docker_node_nginx_fullcycle/general
+https://hub.docker.com/repository/docker/diasdedev/docker_node_nginx_fullcycle_new_v2/general
