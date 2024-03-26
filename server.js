@@ -12,9 +12,18 @@ const connection = mysql.createConnection({
   user: 'root',
   password: '1234',
   database: 'nodedb',
+  port: 3306,
 })
 
 connection.connect()
+
+connection.query(
+  `CREATE TABLE IF NOT EXISTS people (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255))`,
+  (err) => {
+    if (err) throw err
+    console.log('Tabela criada com sucesso!')
+  }
+)
 
 app.get('/', (req, res) => {
   connection.query(
