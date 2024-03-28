@@ -12,11 +12,13 @@ services:
       - app-network
     ports:
       - "3000:3000"
+    volumes:
+      - app:/app
 
   db:
     image: mysql:5.7
     volumes:
-      - ./mysql:/var/lib/mysql
+      - db:/var/lib/mysql
     container_name: db
     environment:
       MYSQL_ROOT_PASSWORD: 1234
@@ -36,6 +38,10 @@ services:
       - app
     networks:
       - app-network
+
+volumes:
+  app:
+  db:
 
 networks:
   app-network:
